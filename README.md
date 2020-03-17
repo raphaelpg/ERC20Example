@@ -4,10 +4,8 @@ This is an ERC20 Token template to deploy on the blockchain.
 
 One token example has been deployed on Ropsten testnet at '0x6f1d6BD8C4cca3464aB0DE2FD2BFE532a2B60eC3' called 'EET'.  
 
-With Truffle I ran tests to check all ERC20 standards functions and also "Ownable"
+With Truffle I ran tests to check all 'ERC20' standards functions and also 'Ownable' functions.
 
-
-If you want to deploy your version you can do it using Metamask and Remix.  
 
 ### Tip for deployment with Remix
 
