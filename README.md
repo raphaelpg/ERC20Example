@@ -9,7 +9,7 @@ With Truffle I ran tests to check all ERC20 standards functions and also "Ownabl
 
 If you want to deploy your version you can do it using Metamask and Remix.  
 
-# Tip for deployment with Remix
+### Tip for deployment with Remix
 
 I've used truffle-flatener to concatenate all the contracts into one and ease Remix deployment.  
 
