@@ -5,7 +5,6 @@ const ERC20Example = artifacts.require("ERC20Example");
 contract("ERC20Example", function(accounts){
     const owner = accounts[0];
     const spender = accounts[1];
-    const recipient = accounts[2];
     const _name = "MyTokenExample";
     const _symbol = "MTE";
     const _decimals = 18;
@@ -47,16 +46,16 @@ contract("ERC20Example", function(accounts){
     //Test 6
     it("Check transfer() function", async function () {
         let ownerBalanceBefore = await this.ERC20ExampleInstance.balanceOf(owner);
-        let recipientBalanceBefore = await this.ERC20ExampleInstance.balanceOf(recipient);
+        let spenderBalanceBefore = await this.ERC20ExampleInstance.balanceOf(spender);
         let amount = new BN('10');
 
-        await this.ERC20ExampleInstance.transfer(recipient, amount, {from: owner});
+        await this.ERC20ExampleInstance.transfer(spender, amount, {from: owner});
 
         let ownerBalanceAfter = await this.ERC20ExampleInstance.balanceOf(owner);
-        let recipientBalanceAfter = await this.ERC20ExampleInstance.balanceOf(recipient);
+        let spenderBalanceAfter = await this.ERC20ExampleInstance.balanceOf(spender);
 
         expect(ownerBalanceAfter).to.be.bignumber.equal(ownerBalanceBefore.sub(amount));
-        expect(recipientBalanceAfter).to.be.bignumber.equal(recipientBalanceBefore.add(amount));
+        expect(spenderBalanceAfter).to.be.bignumber.equal(spenderBalanceBefore.add(amount));
     });
 
     //Test 7
@@ -70,18 +69,18 @@ contract("ERC20Example", function(accounts){
     //Test 8
     it("Check transferFrom() function", async function () {
         let ownerBalanceBefore = await this.ERC20ExampleInstance.balanceOf(owner);
-        let recipientBalanceBefore = await this.ERC20ExampleInstance.balanceOf(recipient);
+        let spenderBalanceBefore = await this.ERC20ExampleInstance.balanceOf(spender);
         let amount = new BN('10');
 
         await this.ERC20ExampleInstance.approve(spender, amount, {from: owner});
 
-        await this.ERC20ExampleInstance.transferFrom(owner, recipient, amount, {from: spender});
+        await this.ERC20ExampleInstance.transferFrom(owner, spender, amount, {from: spender});
 
         let ownerBalanceAfter = await this.ERC20ExampleInstance.balanceOf(owner);
-        let recipientBalanceAfter = await this.ERC20ExampleInstance.balanceOf(recipient);
+        let spenderBalanceAfter = await this.ERC20ExampleInstance.balanceOf(spender);
 
         expect(ownerBalanceAfter).to.be.bignumber.equal(ownerBalanceBefore.sub(amount));
-        expect(recipientBalanceAfter).to.be.bignumber.equal(recipientBalanceBefore.add(amount));
+        expect(spenderBalanceAfter).to.be.bignumber.equal(spenderBalanceBefore.add(amount));
     });
 
     //Test 9
