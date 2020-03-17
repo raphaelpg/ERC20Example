@@ -2,7 +2,7 @@
 
 This is an ERC20 Token template to deploy on the blockchain.  
 
-One token example has been deployed on Ropsten testnet at '0xBE1A43023f0A1ff3A00995A48Cc85B1E2D9861f5' called 'EET'.  
+One token example has been deployed on Ropsten testnet at '0x6f1d6BD8C4cca3464aB0DE2FD2BFE532a2B60eC3' called 'EET'.  
 
 With Truffle I ran tests to check all ERC20 standards functions and also "Ownable"
 
