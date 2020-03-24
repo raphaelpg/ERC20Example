@@ -15,3 +15,5 @@ I've used truffle-flatener to concatenate all the contracts into one and ease Re
 npm install truffle-flattener -g
 truffle-flattener <solidity-files>
 ```
+
+ERC20 EIP https://eips.ethereum.org/EIPS/eip-20
